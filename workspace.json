@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "projects": {
+    "api": "apps/api",
+    "api-interfaces": "libs/api-interfaces",
+    "winning-project": "apps/winning-project",
+    "winning-project-e2e": "apps/winning-project-e2e"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "root": "apps/winning-project",
+  "sourceRoot": "apps/winning-project/src",
+  "projectType": "application",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/web:webpack",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "compiler": "babel",
+        "outputPath": "dist/apps/winning-project",
+        "index": "apps/winning-project/src/index.html",
+        "baseHref": "/",
+        "main": "apps/winning-project/src/main.tsx",
+        "polyfills": "apps/winning-project/src/polyfills.ts",
+        "tsConfig": "apps/winning-project/tsconfig.app.json",
+        "assets": [
+          "apps/winning-project/src/favicon.ico",
+          "apps/winning-project/src/assets"
+        ],
+        "styles": ["apps/winning-project/src/styles.scss"],
+        "scripts": [],
+        "webpackConfig": "@nrwl/react/plugins/webpack"
+      },
+      "configurations": {
+        "production": {
+          "fileReplacements": [
+            {
+              "replace": "apps/winning-project/src/environments/environment.ts",
+              "with": "apps/winning-project/src/environments/environment.prod.ts"
+            }
+          ],
+          "optimization": true,
+          "outputHashing": "all",
+          "sourceMap": false,
+          "namedChunks": false,
+          "extractLicenses": true,
+          "vendorChunk": false
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nrwl/web:dev-server",
+      "options": {
+        "buildTarget": "winning-project:build",
+        "hmr": true,
+        "proxyConfig": "apps/winning-project/proxy.conf.json"
+      },
+      "configurations": {
+        "production": {
+          "buildTarget": "winning-project:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/winning-project/**/*.{ts,tsx,js,jsx}"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/winning-project"],
+      "options": {
+        "jestConfig": "apps/winning-project/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

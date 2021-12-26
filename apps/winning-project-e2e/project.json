@@ -1,0 +1,28 @@
+{
+  "root": "apps/winning-project-e2e",
+  "sourceRoot": "apps/winning-project-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/winning-project-e2e/cypress.json",
+        "devServerTarget": "winning-project:serve"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "winning-project:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/winning-project-e2e/**/*.{js,ts}"]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["winning-project"]
+}
