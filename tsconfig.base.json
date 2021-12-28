@@ -15,7 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@my-awesome-project/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@my-awesome-project/api-interfaces": [
+        "libs/api-interfaces/src/index.ts"
+      ],
+      "@my-awesome-project/native-header": ["libs/native-header/src/index.ts"],
+      "@my-awesome-project/shared-interface": [
+        "libs/shared-interface/src/index.ts"
+      ]
     }
   },
   "exclude": ["node_modules", "tmp"]

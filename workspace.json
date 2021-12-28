@@ -5,6 +5,8 @@
     "api-interfaces": "libs/api-interfaces",
     "mobile-winning-project": "apps/mobile-winning-project",
     "mobile-winning-project-e2e": "apps/mobile-winning-project-e2e",
+    "native-header": "libs/native-header",
+    "shared-interface": "libs/shared-interface",
     "winning-project": "apps/winning-project",
     "winning-project-e2e": "apps/winning-project-e2e"
   }

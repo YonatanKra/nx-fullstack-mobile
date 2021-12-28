@@ -96,3 +96,6 @@ buck-out/
 node_modules/
 
 apps/mobile-winning-project-e2e/artifacts
+## Nested node_modules
+
+node_modules/
